@@ -1,136 +1,209 @@
-<!--
+<!-- Unit 5 Project
 Requirements
-[Yes] Google Font OR Uploaded Font
-[Yes] font-size OR font-style 
-[Yes] Five CSS Rules
+[Yes] <div> and <span>
+[Yes] height: and width:
+[Yes] margin: and padding: 
 [Yes] Three Images
 
 Select ONE Additional Feature to Add  
-[Yes] Feature 1 - Include a Static Background Image
-[ no ] Feature 2 - Use a unique border-radius
-[ no ] Feature 3 - Use width and margin CSS Properties
-[ no ] Feature 4 - Include at least one more additional HTML page
+[ no ] Feature 1 - Flexbox
+[Yes] Feature 2 - Flip Card
+[ no ] Feature 3 - Navbar
+[ no ] Feature 4 - Shaking Animation
+[ no ] Feature 5 - Gradient Background
+[ no ] Feature 6 - Spotify Playlist
 -->
 
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tainaaa✨</title>
+    <title>Unit 5 Project</title>
     <meta charset="utf-8" />
     <style>
-      h1 {
-        color: purple;
-      }
-      h2 {
-        color: purple;
-      }
-      #Genres {
-        color: rgb(155, 126, 189);
-        font-family: fantasy;
-      }
-      #friends {
-        color: rgb(167, 114, 125);
-         font-family: "Permanent Marker", cursive;
-      }
-      #glitter {
-        color: rgb(167, 114, 125);
-         font-family: "Permanent Marker", cursive;
-      }
-      #fool {
-        color: rgb(167, 114, 125);
-         font-family: "Permanent Marker", cursive;
-      }
-      body {
-        font-size: 11px;
-      }
-      .big {
-        font-size: 2em;
-      }
 
-      .bigger {
-        font-size: 1.5em;
-      }
       body {
-        background-image: url("https://img.freepik.com/premium-photo/beige-background-with-light-brown-background_871780-1070.jpg");
-        background-size: contain;
+        background-image: url("https://wallpapers.com/images/hd/deep-blue-christmas-background-with-snowflakes-jud63xtzi25pakx0.jpg");
+
         background-repeat: no-repeat;
         background-attachment: fixed;
       }
+
+
+      .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+
+      .flip-card-front {
+        background-color: #bbb;
+        color: black;
+      }
+
+      .flip-card-back {
+        background-color: #5f2eb3;
+        color: pink;
+        transform: rotateY(180deg);
+      }
+      .info {
+        background: rgb(219, 235, 255);
+        width: 50%;
+        height: 180px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        
+      }
+      #show {
+        width: 120px;
+      }
+      .first-sentence {
+        color: red;
+        font-style: italic;
+      }
+      #official-info {
+        background-color: rgb(213, 204, 224);
+        border-radius: 10px;
+        width: 50%;
+      }
+      body {
+        font-family: monospace;
+        color: blue;
+      }
+      .photo-gallery {
+        background: rgb(194, 235, 240);
+        width: 600px;
+        margin-center: auto;
+        border: 50px groove purple;
+        
+      }
+      .photo {
+        width: 200px;
+        margin: 15px 0px 6px;
+        border: 30px groove blue;
+      }
     </style>
   </head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
   <body>
-    <h1>Tainaaa✨</h1>
-    <h2>heyyyyy in this channel I'll review your favorite artists</h2>
-    <p id="Genres">
-      From all different genres:<br />
-      Pop,<br />
-      R&B,<br />
-      Rap,<br />
-      Indie,<br />
-      And more!
-    </p>
-    <h1>We Can't Be Friends⭐⭐⭐⭐⭐</h1>
-    <h2>by Ariana Grande</h2>
-    <p id="friends">
-      We can't be <em class="big">friends</em>,
-      <br />
-      But I'd like to just
-      <em class="big">pretend.</em> <br />
-      You cling to your <em class="big">papers and pens.</em> <br />
-      Wait until you
-      <em class="big">like me again.</em> <br />
-      Wait for your <em class="big">love.</em> <br />
-      Love, I'll wait for your <em class="bigger">love.</em> I'll wait for your
-      <em class="bigger">love.</em>
-    </p>
-    <img
-      src="https://i.ytimg.com/vi/UdRAXWNvjzE/maxresdefault.jpg"
-      alt="Ariana Grande"
-      width="410"
-    />
-    <h1>Glitter⭐⭐⭐⭐⭐</h1>
-    <h2>by Tyler The Creator</h2>
-    <p id="glitter">
-      Firework, I feel like<em class="big"> glitter</em>,
-      <br />
-      And every time you come around, I feel like
-      <em class="big"> glitter(how you feel?).</em> <br />
-      You're the one that I needed in
-      <em class="big">my life (what ya say?).</em> <br />
-      You're the one that I needed in
-      <em class="big">my life (what ya say?).</em> <br />
-      Cause I love having you around
-      <em class="big">(I love).</em> <br />
-      'Cause I love having you <em class="big">around.</em> <br />
-    </p>
+    <h1>The Nutcracker</h1>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img
+            src="https://c8.alamy.com/comp/2RE1NJA/beautiful-cartoon-illustration-with-christmas-tree-magic-ball-watercolor-xmas-celebration-concept-2RE1NJA.jpg"
+            alt="Avatar"
+            style="width: 300px; height: 300px"
+          />
+        </div>
+        <div class="flip-card-back">
+          <h1>The Nutcracker</h1>
+          <h2>Staring Liliana!</h2>
+          <h3>Enjoy the show!🎄❄🎅🤶</h3>
+        </div>
+      </div>
+    </div>
 
     <img
-      src="https://i.pinimg.com/originals/f2/2a/f8/f22af82b606edd7dc9f2ca6f36054b91.jpg"
-      alt="Tyler"
-      width="410"
+      id="show"
+      class="pic"
+      src="https://www.cityofrc.us/sites/default/files/2023-06/The%20Nutcracker.png"
+      alt="Photo of the show"
     />
-    <h1>Fool For You⭐⭐⭐⭐⭐</h1>
-    <h2>by Snoh Aalegra</h2>
-    <p id="fool">
-      And I'll be a <em class="big"> fool for you</em>,
-      <br />
-      I know myself, but I
-      <em class="big">pretend.</em> <br />
-      I leave and I come back <em class="big">again.</em> <br />
-      I'm a fool for
-      <em class="big">you.</em> <br />
-      I love you time and time <em class="big">again.</em> <br />
-      Love, I'll wait for your <em class="bigger">love.</em> I know just how the
-      story<em class="bigger"> ends.</em>
-    </p>
 
-    <img
-      src="https://pmstudio.com/pmstudio/images/Snoh-Aalegra7.jpg"
-      alt="Ariana Grande"
-      width="410"
-    />
+    <div class="info">
+      
+      <p>
+        The <strong>Nutcracker</strong> "is loosely based on the E.T.A. Hoffmann
+        fantasy story The Nutcracker and the Mouse King, about a girl who
+        befriends a nutcracker that comes to life on Christmas Eve and wages a
+        battle against the evil Mouse King."
+      </p>
+      <p>
+        "According to German folklore, nutcrackers we given as keepsakes to
+        bring luck to the family and protect the home. It is said that they
+        represent strength and power and watches over the family keeping evil
+        spirits and danger away."
+      </p>
+      <p>
+        "Do The Nutcracker and Clara fall in love? THIS IS NOT A LOVE STORY
+        Unlike almost every other ballet from the 19th century, “The Nutcracker”
+        isn't about falling in love. So if you see the heroine Clara dancing a
+        romantic pas de deux with the Nutcracker prince, you're watching an
+        alternative version; I call this anti-“Nutcracker” behavior."
+      </p>
+      <p>
+        Run Time: 2 hours and 3 minutes, including a 25-minute intermission.
+      </p>
+      <p>ticket price: $5 per person</p>
+
+      <a href="https://en.wikipedia.org/wiki/The_Nutcracker"
+        >Read more on Wikipedia</a
+      >
+    </div>
+
+    <div id="official-info">
+      <p>
+        <span class="first-sentence"> Liliana is the star of the show! </span>
+        She plays Clara. With Liliana's amzing dance, sining, and acting skills
+        she give the play a whole other perspective. The character Clara is "the
+        young girl who is the heroine of the story. She receives the Nutcracker
+        doll at her parent's annual holiday party, which begins the adventure.
+        She wears banana curls and ribbons in her hair, a pretty white dress and
+        petticoats. Fritz is Clara's mischievous younger brother."
+      </p>
+
+      <p>
+       ❄🎄Enjoy the show!🎄❄
+      </p>
+    </div>
+
+    <div class="photo-gallery">
+      <img 
+        class="photo"
+        src="https://i.guim.co.uk/img/media/0da9745a8960738de472ddcbd651a581fc7a9357/0_115_3000_1800/master/3000.jpg?width=700&quality=85&auto=format&fit=max&s=5e825f9d69ca77e851fa2b78e67749ea"
+      />
+
+      <img
+        class="photo"
+        src="https://statetheatre.info/wp-content/uploads/2022/06/Act-1-179.jpg"
+      />
+
+      <img
+        class="photo"
+        src="https://i0.wp.com/secondcitymom.com/wp-content/uploads/2020/12/img_7388.jpg?resize=620%2C775&ssl=1"
+      />
+      
+      <img
+        class="photo"
+        src="      https://skyhorse-us.imgix.net/covers/9781631583629.jpg?auto=format&w=298
+"
+      />
+      
+      
+    </div>
   </body>
 </html>
